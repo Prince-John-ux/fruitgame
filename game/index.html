@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fruit Catcher Game</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body, html {
+      height: 100%;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+    }
+
+    #container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #startScreen {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 2;
+      color: white;
+    }
+
+    canvas {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border: 2px solid white;
+      background-color: black;
+    }
+
+    #buttonContainer {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      gap: 15px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #mobileControls {
+      margin-top: 10px;
+      display: none;
+    }
+
+    #mobileControls button {
+      padding: 15px 25px;
+      font-size: 18px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="startScreen">
+  <h1>Fruit Catcher 🍓</h1>
+  <button id="startBtn">Start</button>
+</div>
+
+<div id="container">
+  <canvas id="gameCanvas" width="400" height="600"></canvas>
+  <div id="buttonContainer">
+    <button id="restartBtn" style="display: none;">Restart</button>
+    <button id="pauseBtn">Pause</button>
+  </div>
+  <div id="mobileControls">
+    <button id="leftBtn">⬅️</button>
+    <button id="rightBtn">➡️</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
